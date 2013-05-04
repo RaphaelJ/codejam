@@ -12,7 +12,7 @@ solve = show . solve' . map read . words
             directs = filter ((>= p) . fst) pts
             surps = filter (\(pd, ps) -> pd < p && ps >= p) pts
         in length directs + min (length surps) s
-        
+
 maxPoints :: Int -> (Int, Int)
 maxPoints tot = 
     (maxScore $ scores normal, maxScore $ scores surprising)
